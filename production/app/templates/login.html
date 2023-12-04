@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ログインページ</title>
+    <style>
+      body {
+        background-color: #ff9999;
+      }
+      form {
+        text-align: center;
+        padding: 150px 30px;
+        position: absolute;
+        top: 20%;
+        left: 38%;
+        background-color: #fff;
+      }
+      a {
+        text-align: center;
+        position: absolute;
+        top: 68%;
+        left: 52%;
+      }
+    </style>
+  </head>
+  <body>
+    {% if messages == "wrong_university" %}
+    <p>大学名が間違っています</p>
+    {% elif messages == "wrong_faculity" %}
+    <p>学部学科名が間違っています</p>
+    {% elif messages == "wrong_id" %}
+    <p>学籍番号が間違っています</p>
+    {% elif messages == "logout" %}
+    <p>ログアウトしました</p>
+    {% endif %}
+    <form action="/login" method="post">
+      <div class="login-css1">
+        <label for="university">大学名</label>
+        <input type="text" id="univergtsity" name="university" />
+      </div>
+      <div class="login-css2">
+        <label for="faculity">学部学科名</label>
+        <input type="text" id="faculity" name="faculity" />
+      </div>
+      <div class="login-css3">
+        <label for="user_id">学籍番号</label>
+        <input type="text" id="user_id" name="user_id" />
+      </div>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}" />
+      <input class="login-css4" type="submit" value="ログイン" />
+    </form>
+    <a href="/newcomer">新規登録はこちら</a>
+  </body>
+</html>

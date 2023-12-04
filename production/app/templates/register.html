@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>新規登録</title>
+    </head>
+    <body>
+        <h1 class="register-css1">みんなちがってみんないい</h1>
+        <div class="register-css2">
+            <h2 class="register-css3">このサイトの新規登録</h2>
+            <form action="/register" method="post">
+                <h3 class="register-css4">大学名|学部学科名|学籍番号</h3>
+                <table class="register-table-css" cellspacing="0" summary="information">
+                    <tbody>
+                        <tr>
+                            <th id="university_name" class="headRow" scope="row">
+                                <span style="color:red">重要</span>
+                                大学名
+                            </th>
+                            <td>
+                                <input type="text" name="university_name" placeholder="university_name">
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th id="faculity_name" class="headRow" scope="row">
+                                <span style="color:red">重要</span>
+                                学部学科名
+                            </th>
+                            <td>
+                                <input type="text" name="faculity_name" placeholder="faculity_name">
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th id="user_id" class="headRow" scope="row">
+                                <span style="color:red">重要</span>
+                                学籍番号
+                            </th>
+                            <td>
+                                <input type="text" name="user_id" placeholder="user_id">
+                            </td>
+                        </tr>
+                    </tbody>
+                    <input type="submit" value="新規登録">
+            </form>
+        </div>
+    </body>
+</html>
