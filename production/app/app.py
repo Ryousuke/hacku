@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,session,redirect,url_for,jsonify,abort
+from flask import Flask,render_template,request,session,redirect,url_for,jsonify
 from flask_cors import CORS
 from dataclasses import dataclass
 import sqlite3,json
@@ -40,6 +40,12 @@ professors = [
     InfomationsProfessor("中西淳平", "三重県", "登山", "バドミントン", "天白キャンパス", "理工学部機械工学科", "横浜DeNAベイスターズ", "ロボティクス", "イヌ", "EDM"),
     InfomationsProfessor("松原剛", "鹿児島県", "ギター", "ダーツ", "天白キャンパス", "理工学部機械工学科", "中日ドラゴンズ", "疲労強度設計", "ゴリラ", "雅楽"),
 ]
+
+def get_professor_by_id(professor_id):
+    for professorin professors:
+        if professorin professors:
+            return professor
+    return None
 
 @app.route('/endpoint', methods=['GET', 'POST'])
 def endpoint():
@@ -153,18 +159,49 @@ def result():
         compatibility_score = (max(common_hobbies_count)/ max_possible_score) * 100  # パーセンテージで表現
         
         best_professor = professors[common_hobbies_count.index(max(common_hobbies_count))]
-        return jsonify('最も相性が高いのは{}先生で{}%だったよ!!'.format(best_professor.name, compatibility_score)),200
+       data = {
+            'professor_name': best_professor.name,
+            'compatibility_score': compatibility_score
+        }
+
+        return render_template('result.html',data=data), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
     
 @app.route('/search',methods=['POST'])
 def search():
-    try:
-        keyword=request.form['keyword'].lower()
-        results=[professor.__dict__ for professor in professors if keyword in professor.name.lower() or keyword in professor.field.lower() or keyword in professor.hometown.lower() or keyword in professor.hobby1.lower() or keyword in professor.hobby2.lower() or keyword in professor.campus.lower() or keyword in professor.faculity.lower() or keyword in professor.team.lower() or keyword in professor.animal.lower() or keyword in professor.music.lower()]
-        return json.dumps(results,ensure_ascii=False).encode('utf-8')
-    except Exception as e:
-        return json.dumps({'error':str(e)}),500
+    def search():
+    keyword = request.form.get('keyword', '')
+    matching_professors = [professor for professor in professors if keyword.lower() in professor.name.lower() or keyword in professor.hometown.lower() or keyword in professor.hobby1.lower() or keyword in professor.hobby2.lower() or keyword in professor.campus.lower() or keyword in professor.faculity.lower() or keyword in professor.team.lower() or keyword in professor.field.lower() or keyword in professor.animal.lower()or keyword in professor.music.lower()]
+    return render_template('search_result.html', professors=matching_professors, keyword=keyword)
 
+@app.route('/professor_detail/<int:professor_id>')
+def professor_detail(professor_id):
+    professor = get_professor_by_id(professor_id)
+    if professor_id==1:
+        return render_template('Professor Profile Kakimoto.html', professor=professor)
+    elif professor_id==2:
+        return render_template('welcome.html', message='教授が見つかりません')
+    elif professor_id==3:
+        return render_template('Professor Profile Kakimoto.html', professor=professor)
+    elif professor_id==4:
+        return render_template('welcome.html', message='教授が見つかりません')
+    elif professor_id==5:
+        return render_template('Professor Profile Kakimoto.html', professor=professor)
+    elif professor_id==6:
+        return render_template('welcome.html', message='教授が見つかりません')
+    elif professor_id==7:
+        return render_template('Professor Profile Kakimoto.html', professor=professor)
+    elif professor_id==8:
+        return render_template('welcome.html', message='教授が見つかりません')
+    elif professor_id==9:
+        return render_template('Professor Profile Kakimoto.html', professor=professor)
+    elif professor_id==10:
+        return render_template('Professor Profile Kakimoto.html', message='教授が見つかりません')
+    elif professor_id==11:
+        return render_template('Professor Profile Kakimoto.html', professor=professor)
+    else:
+        return render_template('welcome.html', message='教授が見つかりません')
+    
 if __name__=="__main__":
     app.run(debug=True)
