@@ -8,18 +8,22 @@
   </head>
   <body>
     <h1>相性診断結果</h1>
-    <p id="result"></p>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        fetch("/result", {
-          method: "POST",
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            document.getElementById("result").innerText = data.result;
-          });
-      });
-    </script>
+    <div id="result-container" class="result-css1">
+      <p class="result-css2">
+        最も相性が高いのは{{data.professor_name}}先生で{{data.compatibility_score}}%だったよ!!
+      </p>
+      <p>
+        クリックして<br />
+        |<br />
+        v
+      </p>
+      <a
+        href="{{ url_for('professor_detail', professor_id=data.professor_id) }}"
+      >
+        {{ data.professor_name }}
+      </a>
+    </div>
+    
   </body>
 </html>
