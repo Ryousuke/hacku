@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>メインページ</title>
+    <script>
+      function displayResults(data) {
+        const resultsContainer = document.getElementById("results-container");
+        resultsContainer.innerHTML = "";
+
+        if (data.length === 0) {
+          resultsContainer.innerHTML = "No matching professors found.";
+        } else {
+          data.forEach((professor) => {
+            const professorInfo = document.createElement("div");
+            professorInfo.innerHTML = `<p>Name: ${professor.name}</p>
+                                       <p>Hometown: ${professor.hometown}</p>
+                                       <p>...</p>`; // 他のプロパティも必要に応じて追加
+
+            resultsContainer.appendChild(professorInfo);
+          });
+        }
+      }
+
+      function searchProfessors(keyword) {
+        fetch("/search", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({ keyword: keyword }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            displayResults(data);
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    </script>
+
+<!--#############################################-->
+
+<style>
+  body {
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 10px 10px;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    background-color: #fff;
+    max-width: 1080px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .header a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  .css-header-welcome1 {
+    margin: 10px;
+  }
+
+  .css-header-welcome2 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .css-header-welcome3 {
+    display: flex;
+    align-items: center;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+  }
+
+  form label {
+    margin-right: 10px;
+  }
+
+  form input {
+    padding: 8px;
+    margin: 10px;
+  }
+
+  form button {
+    background-color: #547443;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  form button:hover {
+    background-color: #769e61;
+  }
+
+  .main {
+    margin: 20px;
+  }
+
+  .css-main-welcome1 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .css-main-welcome1 a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    margin-right: 20px;
+  }
+
+  .footer {
+    height: 100px; /* Adjust the height as needed */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+  }
+
+</style>
+
+<!--#############################################-->
+
+  </head>
+  <body>
+    <header class="header">
+      <div class="css-header-welcome1">
+        <h1 class="css-header-welcome2">
+          <a class aria-label="みんなちがってみんないい" href="/welcome"
+            >みんなちがってみんないい</a
+          >
+        </h1>
+      </div>
+      <div class="css-header-welcome3">
+        <form action="{{url_for('search')}}" method="POST">
+          <label for="keyword">キーワード検索してください:</label>
+          <input type="text" id="keyword" name="keyword" required />
+          <button type="submit">検索</button>
+        </form>
+      </div>
+    </header>
+    <main class="main">
+      <div class="css-main-welcome1">
+        <a class="css-main-welcome2" href="/welcome">ホーム</a>
+        <a class="css-main-welcome3" href="/question">相性診断</a>
+      </div>
+    </main>
+    <footer class="footer"></footer>
+  </body>
+</html>

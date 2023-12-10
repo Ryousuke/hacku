@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>相性診断結果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="相性診断結果" />
+  </head>
+  <body>
+    <h1>相性診断結果</h1>
+    <p id="result"></p>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/result", {
+          method: "POST",
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("result").innerText = data.result;
+          });
+      });
+    </script>
+  </body>
+</html>

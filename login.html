@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ログインページ</title>
+    <style>
+      body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f7f7f7;
+          margin: 0;
+              }
+
+      form {
+          text-align: center;
+          margin: 50px auto;
+          max-width: 400px;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      form p {
+          color: red;
+          font-weight: bold;
+      }
+
+      form label {
+          display: block;
+          margin: 10px 0;
+      }
+
+      form input {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 20px;
+          box-sizing: border-box;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+      }
+
+      input[type="submit"] {
+          background-color: #547443;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+      }
+
+      input[type="submit"]:hover {
+          background-color: #769e61;
+      }
+
+      a {
+          display: block;
+          text-align: center;
+          margin-top: 20px;
+          color: #555;
+          text-decoration: none;
+          font-size: 14px;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    {% if messages == "wrong_university" %}
+    <p>大学名が間違っています</p>
+    {% elif messages == "wrong_faculity" %}
+    <p>学部学科名が間違っています</p>
+    {% elif messages == "wrong_id" %}
+    <p>学籍番号が間違っています</p>
+    {% elif messages == "logout" %}
+    <p>ログアウトしました</p>
+    {% endif %}
+    <form action="/login" method="post">
+      <div class="login-css1">
+        <label for="university">大学名</label>
+        <input type="text" id="univergtsity" name="university" />
+      </div>
+      <div class="login-css2">
+        <label for="faculity">学部学科名</label>
+        <input type="text" id="faculity" name="faculity" />
+      </div>
+      <div class="login-css3">
+        <label for="user_id">学籍番号</label>
+        <input type="text" id="user_id" name="user_id" />
+      </div>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}" />
+      <input class="login-css4" type="submit" value="ログイン" />
+    </form>
+    <a href="/newcomer">新規登録はこちら</a>
+  </body>
+</html>

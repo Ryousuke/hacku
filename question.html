@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>教授と相性診断</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="教授と相性診断" />
+  </head>
+
+  <style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0 5% 0 5%;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  
+  input[type="submit"] {
+    margin: 0 100% 0 0;
+    background-color: #547443;
+    border :none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #769e61;
+    transition: all 300ms 0s ease;
+  }
+  
+  select {
+    margin-bottom: 16px;
+  }
+  
+  /* Optional: Style for better readability */
+  select,
+  input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Optional: Additional styling based on personal preference */
+  /* Feel free to adjust colors, fonts, and other styles based on your preferences */
+  
+</style>  
+
+  <body>
+    <h1>あなたと教授の相性何パーセント？</h1>
+    <form action="/result" method="post">
+      <label for="person_name">あなたの名前(漢字で記入):</label>
+      <input type="text" id="person_name" name="person_name" required /><br />
+
+      <label for="hometown">出身地を選択してください</label><br />
+      <select id="hometown" name="hometown">
+        <option value="北海道">北海道</option>
+        <option value="青森県">青森県</option>
+        <option value="岩手県">岩手県</option>
+        <option value="宮城県">宮城県</option>
+        <option value="秋田県">秋田県</option>
+        <option value="山形県">山形県</option>
+        <option value="福島県">福島県</option>
+        <option value="茨城県">茨城県</option>
+        <option value="栃木県">栃木県</option>
+        <option value="群馬県">群馬県</option>
+        <option value="埼玉県">埼玉県</option>
+        <option value="千葉県">千葉県</option>
+        <option value="東京都">東京都</option>
+        <option value="神奈川県">神奈川県</option>
+        <option value="新潟県">新潟県</option>
+        <option value="富山県">富山県</option>
+        <option value="石川県">石川県</option>
+        <option value="福井県">福井県</option>
+        <option value="山梨県">山梨県</option>
+        <option value="長野県">長野県</option>
+        <option value="岐阜県">岐阜県</option>
+        <option value="静岡県">静岡県</option>
+        <option value="愛知県">愛知県</option>
+        <option value="三重県">三重県</option>
+        <option value="滋賀県">滋賀県</option>
+        <option value="京都府">京都府</option>
+        <option value="大阪府">大阪府</option>
+        <option value="兵庫県">兵庫県</option>
+        <option value="奈良県">奈良県</option>
+        <option value="和歌山県">和歌山県</option>
+        <option value="鳥取県">鳥取県</option>
+        <option value="島根県">島根県</option>
+        <option value="岡山県">岡山県</option>
+        <option value="広島県">広島県</option>
+        <option value="山口県">山口県</option>
+        <option value="徳島県">徳島県</option>
+        <option value="香川県">香川県</option>
+        <option value="愛媛県">愛媛県</option>
+        <option value="高知県">高知県</option>
+        <option value="福岡県">福岡県</option>
+        <option value="佐賀県">佐賀県</option>
+        <option value="長崎県">長崎県</option>
+        <option value="熊本県">熊本県</option>
+        <option value="大分県">大分県</option>
+        <option value="宮崎県">宮崎県</option>
+        <option value="鹿児島県">鹿児島県</option>
+        <option value="沖縄県">沖縄県</option></select
+      ><br />
+
+      <label for="hobby1"
+        >（１）趣味を教えてください（答える際は次のように答えてくださいー＞音楽を聴くことなら「音楽」,野球観戦・することー＞「野球」と記入）</label
+      >
+      <input type="text" id="hobby1" name="hobby1" required /><br />
+
+      <label for="hobby2"
+        >（２）趣味を教えてください（答える際は次のように答えてくださいー＞音楽を聴くことなら「音楽」,野球観戦・することー＞「野球」と記入）</label
+      >
+      <input type="text" id="hobby2" name="hobby2" required /><br />
+
+      <label for="campus">キャンパスを選択してください</label><br />
+      <select id="campus" name="campus">
+        <option value="天白キャンパス">天白キャンパス</option>
+        <option value="名古屋ドーム前キャンパス">
+          名古屋ドーム前キャンパス
+        </option>
+        <option value="八事キャンパス">八事キャンパス</option></select
+      ><br />
+
+      <label for="faculity">学部・学科を選択してください</label><br />
+      <select id="faculity" name="faculity">
+        <option value="法学部法学科">法学部法学科</option>
+        <option value="経営学部経営学科">経営学部経営学科</option>
+        <option value="経営学部国際経営学科">経営学部国際経営学科</option>
+        <option value="経済学部経済学科">経済学部経済学科</option>
+        <option value="経済学部産業社会学科">経済学部産業社会学科</option>
+        <option value="外国語学部国際英語学科">外国語学部国際英語学科</option>
+        <option value="人間学部人間学科">人間学部人間学科</option>
+        <option value="都市情報学部都市情報学科">
+          都市情報学部都市情報学科
+        </option>
+        <option value="情報工学部情報工学科">理工・情報工学部情報工学科</option>
+        <option value="理工学部数学科">理工学部数学科</option>
+        <option value="理工学部電機電子工学科">理工学部電機電子工学科</option>
+        <option value="理工学部材料機能工学科">理工学部材料機能工学科</option>
+        <option value="理工学部応用化学科">理工学部応用化学科</option>
+        <option value="理工学部機械工学科">理工学部機械工学科</option>
+        <option value="理工学部交通機械工学科">理工学部交通機械工学科</option>
+        <option value="理工学部メカトロニクス工学科">
+          理工学部メカトロニクス工学科
+        </option>
+        <option value="理工学部社会基盤デザイン工学科">
+          理工学部社会基盤デザイン工学科
+        </option>
+        <option value="理工学部環境創造学科">理工学部環境創造学科</option>
+        <option value="理工学部環境創造工学科">理工学部環境創造工学科</option>
+        <option value="理工学部建築学科">理工学部建築学科</option>
+        <option value="農学部生物資源学科">農学部生物資源学科</option>
+        <option value="農学部応用生物科学科">農学部応用生物科学科</option>
+        <option value="農学部生物環境科学科">農学部生物環境科学科</option>
+        <option value="薬学部薬学科">薬学部薬学科</option></select
+      ><br />
+
+      <label for="team">好きな野球チームを選択してください</label><br />
+      <select id="team" name="team">
+        <option value="読売ジャイアンツ">読売ジャイアンツ</option>
+        <option value="東京ヤクルトスワローズ">東京ヤクルトスワローズ</option>
+        <option value="横浜DeNAベイスターズ">横浜DeNAベイスターズ</option>
+        <option value="阪神タイガース">阪神タイガース</option>
+        <option value="広島東洋カープ">広島東洋カープ</option>
+        <option value="中日ドラゴンズ">中日ドラゴンズ</option>
+        <option value="福岡ソフトバンクホークス">
+          福岡ソフトバンクホークス
+        </option>
+        <option value="埼玉西武ライオンズ">埼玉西武ライオンズ</option>
+        <option value="オリックス・バファローズ">
+          オリックス・バファローズ
+        </option>
+        <option value="東北楽天ゴールデンイーグルス">
+          東北楽天ゴールデンイーグルス
+        </option>
+        <option value="千葉ロッテマリーンズ">千葉ロッテマリーンズ</option>
+        <option value="北海道日本ハムファイターズ">
+          北海道日本ハムファイターズ
+        </option>
+        <option value="なし">なし</option></select
+      ><br />
+
+      <label for="field">興味のある分野を教えてください</label>
+      <input type="text" id="field" name="field" required /><br />
+
+      <label for="animal">好きな動物を教えてください（カタカナで記入）</label>
+      <input type="text" id="animal" name="animal" required /><br />
+
+      <label for="music">好きな音楽のアーティストを教えてください</label>
+      <input type="text" id="music" name="music" required /><br />
+
+      <input type="submit" value="診断する" />
+    </form>
+  </body>
+</html>
