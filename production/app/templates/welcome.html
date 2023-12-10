@@ -4,40 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>メインページ</title>
-    <script>
-      function displayResults(data) {
-        const resultsContainer = document.getElementById("results-container");
-        resultsContainer.innerHTML = "";
-
-        if (data.length === 0) {
-          resultsContainer.innerHTML = "No matching professors found.";
-        } else {
-          data.forEach((professor) => {
-            const professorInfo = document.createElement("div");
-            professorInfo.innerHTML = `<p>Name: ${professor.name}</p>
-                                       <p>Hometown: ${professor.hometown}</p>
-                                       <p>...</p>`; // 他のプロパティも必要に応じて追加
-
-            resultsContainer.appendChild(professorInfo);
-          });
-        }
-      }
-
-      function searchProfessors(keyword) {
-        fetch("/search", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: new URLSearchParams({ keyword: keyword }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            displayResults(data);
-          })
-          .catch((error) => console.error("Error:", error));
-      }
-    </script>
+   
 
 <!--#############################################-->
 
@@ -129,6 +96,52 @@
     padding-top: 40px;
   }
 
+  .members {
+        background: #f8f8f8;
+        padding-top: 45px;
+        padding-bottom: 55px;
+      }
+      .members h2 {
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .members h2::after {
+        content: ‘’;
+        display: block;
+        width: 36px;
+        height: 3px;
+        background-color: #000000;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .member-list {
+        display: flex;
+        padding-top: 40px;
+        padding-bottom: 10px;
+        padding-left: 60px;
+        padding-right: 60px;
+        overflow: scroll;
+      }
+      .member-list li {
+        flex-shrink: 0;
+        width: 260px;
+        margin-left: 75px;
+      }
+      .member-list li:first-child {
+        margin-left: 0;
+      }
+      @media (max-width: 800px) {
+        .member-list {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .member-list li {
+          width: 220px;
+          margin-left: 30px;
+        }
+      }
 </style>
 
 <!--#############################################-->
@@ -155,6 +168,93 @@
       <div class="css-main-welcome1">
         <a class="css-main-welcome2" href="/welcome">ホーム</a>
         <a class="css-main-welcome3" href="/question">相性診断</a>
+      </div>
+      <div class="members">
+        <h2>教授の一覧</h2>
+        <ul class="member-list">
+          <li>
+            <img src="images\members\member_A.png" alt="青木文昭" />
+            <dl>
+              <dt><a class="css-main-welcome4" href="/member1">青木文昭</a></dt>
+            </dl>
+          </li>
+          <li>
+            <img src="images\members\member_A.png" alt="鈴木百音" />
+            <dl>
+              <dt><a class="css-main-welcome5" href="/member2">鈴木百音</a></dt>
+            </dl>
+          </li>
+          <li>
+            <img src="images\members\member_A.png" alt="武田勝治" />
+            <dl>
+              <dt><a class="css-main-welcome6" href="/member3">武田勝治</a></dt>
+            </dl>
+          </li>
+          <li>
+            <img src="images\members\member_A.png" alt="鋤柄美紀" />
+            <dl>
+              <dt><a class="css-main-welcome7" href="/member4">鋤柄美紀</a></dt>
+            </dl>
+          </li>
+          <li>
+            <img src="images\members\member_A.png" alt="宮木由賀" />
+            <dl>
+              <dt>
+                <a class="images\members\member_A.png" href="/member5"
+                  >宮木由賀</a
+                >
+              </dt>
+            </dl>
+          </li>
+          <li>
+            <img src="images\members\member_A.png" alt="青林広高" />
+            <dl>
+              <dt><a class="css-main-welcome9" href="/member6">青林広高</a></dt>
+            </dl>
+          </li>
+          <li>
+            <img src="images\members\member_A.png" alt="柳原健" />
+            <dl>
+              <dt><a class="css-main-welcome10" href="/member7">柳原健</a></dt>
+            </dl>
+          </li>
+          <li>
+            <img src="images\members\member_A.png" alt="北中潤" />
+            <dl>
+              <dt><a class="css-main-welcome11" href="/member8">北中潤</a></dt>
+            </dl>
+          </li>
+          <li>
+            <img src="images\members\member_A.png" alt="田中敏夫" />
+            <dl>
+              <dt>
+                <a class="css-main-welcome12" href="/member9">田中敏夫</a>
+              </dt>
+            </dl>
+          </li>
+          <li>
+            <img src="images\members\member_A.png" alt="宇佐見五郎" />
+            <dl>
+              <dt>
+                <a class="css-main-welcome13" href="/member10">宇佐見五郎</a>
+              </dt>
+            </dl>
+          </li>
+          <li>
+            <img src="images\members\member_A.png" alt="中西淳平" />
+            <dl>
+              <dt>
+                <a class="css-main-welcome14" href="/member11">中西淳平</a>
+              </dt>
+            </dl>
+          </li>
+          <li>
+            <img src="images\members\member_A.png" alt="松原剛" />
+            <dl>
+              <dt><a class="css-main-welcome15" href="/member12">松原剛</a></dt>
+            </dl>
+          </li>
+        </ul>
       </div>
     </main>
     <footer class="footer"></footer>
