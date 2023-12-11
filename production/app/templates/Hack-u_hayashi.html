@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林果歩教授の紹介</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .profile {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        h2, h3 {
+            color: #555;
+            border-bottom: 2px solid #555;
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: #777;
+            line-height: 1.5;
+        }
+
+        strong {
+            color: #333;
+        }
+
+        /* Add some styling to make the page more visually appealing */
+        body {
+            transition: background-color 0.5s ease;
+        }
+
+        body:hover {
+            background-color: #e0e0e0;
+        }
+
+        .profile:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile">
+        <h1>林　果歩 (Hayashi Kaho)</h1>
+        <h2>基本情報</h2>
+        <p><strong>出身:</strong> 神奈川県</p>
+        <p><strong>趣味:</strong> 料理とサッカー</p>
+
+        <h2>学歴・所属</h2>
+        <p><strong>所属:</strong> 都市情報学部</p>
+        <p><strong>所属キャンパス:</strong> ナゴヤドーム前キャンパス</p>
+        <p><strong>専門の学問:</strong> 公共政策学</p>
+
+        <h2>好み</h2>
+        <p><strong>好きな球団:</strong> なし</p>
+        <p><strong>好きな動物:</strong> 犬</p>
+        <p><strong>好きな音楽:</strong> あいみょん</p>
+
+        <label for="comment">コメント:</label>
+        <textarea
+          id="comment"
+          name="comment"
+          rows="5"
+          cols="50"
+          required
+        ></textarea
+        ><br />
+
+        <button type="submit">投稿する</button>
+      </form>
+      <h3>過去のコメント</h3>
+      <ul>
+        {% for review in reviews %}
+        <li>{{review.user_id}}:{{review.comment}}</li>
+        {% endfor%}
+      </ul>
+    </div>
+
+</body>
+</html>

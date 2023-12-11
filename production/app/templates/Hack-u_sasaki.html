@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>佐々木王子教授の紹介</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&display=swap');
+        
+        body {
+            background-color: #ffffff;
+            margin: 0;
+            padding: 25px;
+        }
+
+        .name{
+            color: #3a4652
+            text-align: left;
+            margin: 5% 50px;
+            line-height: 1.2em;
+            letter-spacing: 12px;
+            max-width: 1200px;
+        }
+
+        .rubi{
+            color: #7ec58e;
+            font-size:20px;
+            letter-spacing: 1px;
+        }
+
+        .profile {
+            padding: 30px 100px;
+            margin: auto auto;
+            max-width: 1080px;
+        }
+
+        h2{
+            padding: 0px 10px;
+            line-height: 1.8em;
+            border-bottom: 2px solid #666;
+            color: #555;
+        }
+
+        dl{
+            line-height: 1.8em;
+        }
+
+        dt{
+            font-weight: bold;
+            color: #333;
+            padding: 0px 30px
+            line-height: 28px;
+            display: inline-block;
+            width: 9em;
+            float: left;
+        }
+
+
+        table , td, th {
+    	    border: 1px solid #bbbbbb;
+	        border-collapse: collapse;
+        }
+        td, th {
+            text-align: center;
+            width: 100px;
+            height: 35px;
+        }
+        th {
+            background: #f0e6cc;
+        }
+        .even {
+            background: #fbf8f0;
+        }
+        .odd {
+            background: #fefcf9;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="profile">
+
+        
+        <div class="name">
+            <p class="rubi">Sasaki Ouzi</p>
+            <h1>佐々木  王子</h1>
+        </div>
+
+
+        <h2>基本情報</h2>
+        <dl>
+            <dt>出身</dt>
+            <dd>山梨県</dd>
+            <dt>趣味</dt>
+            <dd>登山とバドミントン</dd>
+        </dl>
+
+        <h2>学歴・所属</h2>
+        <dl>
+            <dt>所属</dt>
+            <dd>理工学部</dd>
+            <dt>所属キャンパス</dt>
+            <dd>天白</dd>
+            <dt>専門分野</dt>
+            <dd>ロボティクス</dd>
+        </dl>
+
+        <h2>好み</h2>
+        <dl>
+            <dt>好きな球団</dt>
+            <dd>DeNA</dd>
+            <dt>好きな動物</dt>
+            <dd>犬</dd>
+            <dt>好きな音楽</dt>
+            <dd>EDM</dd>
+        </dl>
+
+        <h2>連絡先等</h2>
+        <dl>
+            <dt>電話番号</dt>
+            <dd>0120-123-456</dd>
+            <dt>メールアドレス</dt>
+            <dd>hoge@hogehoge.com</dd>
+            <dt>応答可能時間</dt>
+            <dd></dd>
+        </dl>
+
+        <!--応答可能時間のテーブル-->
+        <table>
+            <tbody>
+                <tr style="background-color:#3a4652; color:#f8f8f8">
+                    <td style="background-color:#d84473">日</td>
+                    <td>月</td>
+                    <td>火</td>
+                    <td>水</td>
+                    <td>木</td>
+                    <td>金</td>
+                    <td style="background-color:#4490d8">土</td>
+                </tr>
+                <tr style="color:#5f6368">
+                    <td>✕</td>
+                    <td>12:00-13:00</td>
+                    <td>16:00-19:00</td>
+                    <td>✕</td>
+                    <td>✕</td>
+                    <td>✕</td>
+                    <td>10:00-12:00</td>
+                </tr>
+            </tbody>
+        </table>
+        <label for="comment">コメント:</label>
+        <textarea
+          id="comment"
+          name="comment"
+          rows="5"
+          cols="50"
+          required
+        ></textarea
+        ><br />
+
+        <button type="submit">投稿する</button>
+      </form>
+      <h3>過去のコメント</h3>
+      <ul>
+        {% for review in reviews %}
+        <li>{{review.user_id}}:{{review.comment}}</li>
+        {% endfor%}
+      </ul>
+    </div>
+
+    
+
+</body>
+
+</html>

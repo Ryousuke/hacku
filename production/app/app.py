@@ -28,18 +28,18 @@ class InfomationsProfessor:
         return [self.professor_id,self.name, self.hometown, self.hobby1, self.hobby2, self.campus, self.faculity, self.team, self.field, self.animal, self.music]
 
 professors = [
-    InfomationsProfessor(1,"青木文昭", "山梨県", "将棋", "競馬", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "中日ドラゴンズ", "財政学", "ヒツジ", "尾崎豊"),
-    InfomationsProfessor(2,"鈴木百音", "愛知県", "料理", "テニス", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "なし", "公共政策学", "イヌ", "嵐"),
-    InfomationsProfessor(3,"武田勝治", "静岡県", "ベース", "筋トレ", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "なし", "人文地理学", "ネコ", "ロック"),
-    InfomationsProfessor(4,"鋤柄美紀", "広島県", "野球観戦", "コーヒー作り", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "広島東洋カープ", "応用数学", "ネコ", "Mr.Children"),
-    InfomationsProfessor(5,"宮木由賀", "静岡県", "株", "料理", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "なし", "経済", "シカ", "三浦大知"),
-    InfomationsProfessor(6,"青林広高", "秋田県", "麻雀", "盆栽", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "広島東洋カープ", "財政学", "イヌ", "北島三郎"),
-    InfomationsProfessor(7,"柳原健", "三重県", "電車", "野球", "天白キャンパス", "情報工学部情報工学科", "オリックス・バファローズ", "バーチャルリアリティ", "ネコ", "Little Green Monster"),
-    InfomationsProfessor(8,"北中潤", "愛知県", "サッカー", "旅行", "天白キャンパス", "理工学部機械工学科", "なし", "ロボットの知能化", "イヌ","ゆず"),
-    InfomationsProfessor(9,"山谷達", "愛知県", "数学", "競馬", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科","中日ドラゴンズ", "応用数学", "イヌ", "King Gnu"),
-    InfomationsProfessor(10,"宇佐見五郎", "愛知県", "釣り", "筋トレ", "天白キャンパス", "情報工学部情報工学科", "北海道日本ハムファイターズ", "符号理論", "クジャク", "ハウス"),
-    InfomationsProfessor(11,"中西淳平", "三重県", "登山", "バドミントン", "天白キャンパス", "理工学部機械工学科", "横浜DeNAベイスターズ", "ロボティクス", "イヌ", "EDM"),
-    InfomationsProfessor(12,"松原剛", "鹿児島県", "ギター", "ダーツ", "天白キャンパス", "理工学部機械工学科", "中日ドラゴンズ", "疲労強度設計", "ゴリラ", "雅楽"),
+    InfomationsProfessor(1,"五木寛太", "山梨県", "将棋", "競馬", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "中日ドラゴンズ", "財政学", "ヒツジ", "尾崎豊"),
+    InfomationsProfessor(2,"林果歩", "愛知県", "料理", "テニス", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "なし", "公共政策学", "イヌ", "嵐"),
+    InfomationsProfessor(3,"板野金助", "静岡県", "ベース", "筋トレ", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "なし", "人文地理学", "ネコ", "ロック"),
+    InfomationsProfessor(4,"鷲尾美紀", "広島県", "野球観戦", "コーヒー作り", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "広島東洋カープ", "応用数学", "ネコ", "Mr.Children"),
+    InfomationsProfessor(5,"加藤夏美", "静岡県", "株", "料理", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "なし", "経済", "シカ", "三浦大知"),
+    InfomationsProfessor(6,"大野信二", "秋田県", "麻雀", "盆栽", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "広島東洋カープ", "財政学", "イヌ", "北島三郎"),
+    InfomationsProfessor(7,"齋藤裕也", "三重県", "電車", "野球", "天白キャンパス", "情報工学部情報工学科", "オリックス・バファローズ", "バーチャルリアリティ", "ネコ", "Little Green Monster"),
+    InfomationsProfessor(8,"漆原透", "愛知県", "サッカー", "旅行", "天白キャンパス", "理工学部機械工学科", "なし", "ロボットの知能化", "イヌ","ゆず"),
+    InfomationsProfessor(9,"相澤公平", "愛知県", "数学", "競馬", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科","中日ドラゴンズ", "応用数学", "イヌ", "King Gnu"),
+    InfomationsProfessor(10,"田口五郎", "愛知県", "釣り", "筋トレ", "天白キャンパス", "情報工学部情報工学科", "北海道日本ハムファイターズ", "符号理論", "クジャク", "ハウス"),
+    InfomationsProfessor(11,"佐々木王子", "三重県", "登山", "バドミントン", "天白キャンパス", "理工学部機械工学科", "横浜DeNAベイスターズ", "ロボティクス", "イヌ", "EDM"),
+    InfomationsProfessor(12,"遠藤宏", "鹿児島県", "ギター", "ダーツ", "天白キャンパス", "理工学部機械工学科", "中日ドラゴンズ", "疲労強度設計", "ゴリラ", "雅楽"),
 ]
 def get_professor_by_id(professor_id):
     for professor in professors:
@@ -72,40 +72,40 @@ def welcome():
 
 @app.route("/member1")
 def member1():
-    return render_template("Hack-u_aoki.html")
+    return render_template("Hack-u_ituki.html")
 @app.route("/member2")
 def member2():
-    return render_template("Hack-u_suzuki.html")
+    return render_template("Hack-u_hayashi.html")
 @app.route("/member3")
 def member3():
-    return render_template("Hack-u_takeda.html")
+    return render_template("Hack-u_itano.html")
 @app.route("/member4")
 def member4():
-    return render_template("Hack-u_sukigara.html")
+    return render_template("Hack-u_washio.html")
 @app.route("/member5")
 def member5():
-    return render_template("Hack-u_miyaki.html")
+    return render_template("Hack-u_katou.html")
 @app.route("/member6")
 def member6():
-    return render_template("Hack-u_aobayashi.html")
+    return render_template("Hack-u_oono.html")
 @app.route("/member7")
 def member7():
-    return render_template("Hack-u_yanagihara.html")
+    return render_template("Hack-u_saitou.html")
 @app.route("/member8")
 def member8():
-    return render_template("Hack-u_kitanaka.html")
+    return render_template("Hack-u_urusibara.html")
 @app.route("/member9")
 def member9():
-    return render_template("Hack-u_yamaya.html")
+    return render_template("Hack-u_aizawa.html")
 @app.route("/member10")
 def member10():
-    return render_template("Hack-u_usami.html")
+    return render_template("Hack-u_taguti.html")
 @app.route("/member11")
 def member11():
-    return render_template("Hack-u_nakanishi.html")
+    return render_template("Hack-u_sasaki.html")
 @app.route("/member12")
 def member12():
-    return render_template("Hack-u_matsubara.html")
+    return render_template("Hack-u_endou.html")
 
 class userMatch:
     def __init__(self,db_name='user_db.db'):
@@ -236,29 +236,29 @@ def search():
 def professor_detail(professor_id):
     professor = get_professor_by_id(professor_id)
     if professor_id==1:
-        return render_template('Hack-u_aoki.html', professor=professor)
+        return render_template('Hack-u_ituki.html', professor=professor)
     elif professor_id==2:
-        return render_template('Hack-u_suzuki.html', professor=professor)
+        return render_template('Hack-u_hayashi.html', professor=professor)
     elif professor_id==3:
-        return render_template('Hack-u_takeda.html', professor=professor)
+        return render_template('Hack-u_itano.html', professor=professor)
     elif professor_id==4:
-        return render_template('Hack-u_sukigara.html', professor=professor)
+        return render_template('Hack-u_washio.html', professor=professor)
     elif professor_id==5:
-        return render_template('Hack-u_miyaki.html', professor=professor)
+        return render_template('Hack-u_katou.html', professor=professor)
     elif professor_id==6:
-        return render_template('Hack-u_aobayashi.html', professor=professor)
+        return render_template('Hack-u_oono.html', professor=professor)
     elif professor_id==7:
-        return render_template('Hack-u_yanagihara.html', professor=professor)
+        return render_template('Hack-u_saitou.html', professor=professor)
     elif professor_id==8:
-        return render_template('Hack-u_kitanaka.html', professor=professor)
+        return render_template('Hack-u_urusibara.html', professor=professor)
     elif professor_id==9:
-        return render_template('Hack-u_yamaya.html', professor=professor)
+        return render_template('Hack-u_aizawa.html', professor=professor)
     elif professor_id==10:
-        return render_template('Hack-u_usami.html',  professor=professor)
+        return render_template('Hack-u_tagutu.html',  professor=professor)
     elif professor_id==11:
-        return render_template('Hack-u_nakanishi.html', professor=professor)
+        return render_template('Hack-u_sasaki.html', professor=professor)
     else:
-        return render_template('Hack-u_matsubara.html', professor=professor)
+        return render_template('Hack-u_endou.html', professor=professor)
 @app.route('/comment_contents/<int:professor_id>',methods=['GET','POST'])
 def comment_contents(professor_id):
     professor=get_professor_by_id(professor_id)
@@ -279,28 +279,28 @@ def comment_contents(professor_id):
             for review_data in reviews_data:
                 reviews.append({'user_id': review_data[1], 'professor_number': review_data[2], 'comment': review_data[3]})
     if professor_id==1:
-        return render_template('Hack-u_aoki.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_ituki.html', professor=professor,reviews=reviews)
     elif professor_id==2:
-        return render_template('Hack-u_suzuki.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_hayashi.html', professor=professor,reviews=reviews)
     elif professor_id==3:
-        return render_template('Hack-u_takeda.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_itano.html', professor=professor,reviews=reviews)
     elif professor_id==4:
-        return render_template('Hack-u_sukigara.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_washio.html', professor=professor,reviews=reviews)
     elif professor_id==5:
-        return render_template('Hack-u_miyaki.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_katou.html', professor=professor,reviews=reviews)
     elif professor_id==6:
-        return render_template('Hack-u_aobayashi.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_oono.html', professor=professor,reviews=reviews)
     elif professor_id==7:
-        return render_template('Hack-u_yanagihara.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_saitou.html', professor=professor,reviews=reviews)
     elif professor_id==8:
-        return render_template('Hack-u_kitanaka.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_urusibara.html', professor=professor,reviews=reviews)
     elif professor_id==9:
-        return render_template('Hack-u_yamaya.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_aizawa.html', professor=professor,reviews=reviews)
     elif professor_id==10:
-        return render_template('Hack-u_usami.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_taguti.html', professor=professor,reviews=reviews)
     elif professor_id==11:
-        return render_template('Hack-u_nakanishi.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_sasaki.html', professor=professor,reviews=reviews)
     else:
-        return render_template('Hack-u_matsubara.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_endou.html', professor=professor,reviews=reviews)
 if __name__=="__main__":
     app.run(debug=True)
