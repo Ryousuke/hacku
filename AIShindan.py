@@ -1,6 +1,6 @@
 from gensim.models import FastText
 
-# 入力データ
+# 入力データ　ここにquestionで入力した項目を飛ばせればいける？
 input_word = "経済"
 
 # 配列
