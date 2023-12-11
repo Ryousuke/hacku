@@ -36,17 +36,17 @@ professors = [
     InfomationsProfessor(6,"青林広高", "秋田県", "麻雀", "盆栽", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科", "広島東洋カープ", "財政学", "イヌ", "北島三郎"),
     InfomationsProfessor(7,"柳原健", "三重県", "電車", "野球", "天白キャンパス", "情報工学部情報工学科", "オリックス・バファローズ", "バーチャルリアリティ", "ネコ", "Little Green Monster"),
     InfomationsProfessor(8,"北中潤", "愛知県", "サッカー", "旅行", "天白キャンパス", "理工学部機械工学科", "なし", "ロボットの知能化", "イヌ","ゆず"),
-    InfomationsProfessor(9,"田中敏夫", "愛知県", "ドライブ", "写真撮影", "天白キャンパス", "情報工学部情報工学科", "オリックス・バファローズ", "コンピュータグラフィックス", "パンダ", "ヒップホップ"),
+    InfomationsProfessor(9,"山谷達", "愛知県", "数学", "競馬", "名古屋ドーム前キャンパス", "都市情報学部都市情報学科","中日ドラゴンズ", "応用数学", "イヌ", "King Gnu"),
     InfomationsProfessor(10,"宇佐見五郎", "愛知県", "釣り", "筋トレ", "天白キャンパス", "情報工学部情報工学科", "北海道日本ハムファイターズ", "符号理論", "クジャク", "ハウス"),
     InfomationsProfessor(11,"中西淳平", "三重県", "登山", "バドミントン", "天白キャンパス", "理工学部機械工学科", "横浜DeNAベイスターズ", "ロボティクス", "イヌ", "EDM"),
     InfomationsProfessor(12,"松原剛", "鹿児島県", "ギター", "ダーツ", "天白キャンパス", "理工学部機械工学科", "中日ドラゴンズ", "疲労強度設計", "ゴリラ", "雅楽"),
 ]
-
 def get_professor_by_id(professor_id):
     for professor in professors:
         if professor.professor_id == professor_id:
             return professor
     return None
+
 
 @app.route('/endpoint', methods=['GET', 'POST'])
 def endpoint():
@@ -63,7 +63,6 @@ def login_page():
     csrf_token = secrets.token_hex(16)
     session['csrf_token'] = csrf_token
     return render_template("login.html",csrf_token=csrf_token)
-    
 @app.route("/welcome")
 def welcome():
     if 'user_id' in session:
@@ -73,41 +72,41 @@ def welcome():
 
 @app.route("/member1")
 def member1():
-    return render_template("question.html")
+    return render_template("Hack-u_aoki.html")
 @app.route("/member2")
 def member2():
-    return render_template("question.html")
+    return render_template("Hack-u_suzuki.html")
 @app.route("/member3")
 def member3():
-    return render_template("question.html")
+    return render_template("Hack-u_takeda.html")
 @app.route("/member4")
 def member4():
-    return render_template("question.html")
+    return render_template("Hack-u_sukigara.html")
 @app.route("/member5")
 def member5():
-    return render_template("question.html")
+    return render_template("Hack-u_miyaki.html")
 @app.route("/member6")
 def member6():
-    return render_template("question.html")
+    return render_template("Hack-u_aobayashi.html")
 @app.route("/member7")
 def member7():
-    return render_template("question.html")
+    return render_template("Hack-u_yanagihara.html")
 @app.route("/member8")
 def member8():
-    return render_template("question.html")
+    return render_template("Hack-u_kitanaka.html")
 @app.route("/member9")
 def member9():
-    return render_template("question.html")
+    return render_template("Hack-u_yamaya.html")
 @app.route("/member10")
 def member10():
-    return render_template("question.html")
+    return render_template("Hack-u_usami.html")
 @app.route("/member11")
 def member11():
-    return render_template("question.html")
+    return render_template("Hack-u_nakanishi.html")
 @app.route("/member12")
 def member12():
-    return render_template("question.html")
-    
+    return render_template("Hack-u_matsubara.html")
+
 class userMatch:
     def __init__(self,db_name='user_db.db'):
         self.conn=sqlite3.connect(db_name)
@@ -128,6 +127,7 @@ class userMatch:
     
     def close_connection(self):
         self.conn.close()
+        
 class reviewMatch:
     def __init__(self,db_name='review_db.db'):
         self.conn=sqlite3.connect(db_name)
@@ -145,10 +145,8 @@ class reviewMatch:
             ''',(professor_number,))
         review=self.cursor.fetchall()
         return review
-        
     def close_connection(self):
-        self.conn.close()         
-        
+        self.conn.close()     
 @app.route("/login",methods=["POST","GET"])
 def login():
     if request.method=='GET':
@@ -218,15 +216,15 @@ def result():
         compatibility_score = (max(common_hobbies_count)/ max_possible_score) * 100  # パーセンテージで表現
         
         best_professor = professors[common_hobbies_count.index(max(common_hobbies_count))]
-       data = {
-           'professor_id': best_professor.professor_id,
+        data = {
+            'professor_id': best_professor.professor_id,
             'professor_name': best_professor.name,
             'compatibility_score': compatibility_score
         }
 
         return render_template('result.html',data=data), 200
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'error':str(e)}), 500
     
 @app.route('/search',methods=['POST'])
 def search():
@@ -238,30 +236,29 @@ def search():
 def professor_detail(professor_id):
     professor = get_professor_by_id(professor_id)
     if professor_id==1:
-        return render_template('Professor Profile Kakimoto.html', professor=professor)
+        return render_template('Hack-u_aoki.html', professor=professor)
     elif professor_id==2:
-        return render_template('welcome.html', message='教授が見つかりません')
+        return render_template('Hack-u_suzuki.html', professor=professor)
     elif professor_id==3:
-        return render_template('Professor Profile Kakimoto.html', professor=professor)
+        return render_template('Hack-u_takeda.html', professor=professor)
     elif professor_id==4:
-        return render_template('welcome.html', message='教授が見つかりません')
+        return render_template('Hack-u_sukigara.html', professor=professor)
     elif professor_id==5:
-        return render_template('Professor Profile Kakimoto.html', professor=professor)
+        return render_template('Hack-u_miyaki.html', professor=professor)
     elif professor_id==6:
-        return render_template('welcome.html', message='教授が見つかりません')
+        return render_template('Hack-u_aobayashi.html', professor=professor)
     elif professor_id==7:
-        return render_template('Professor Profile Kakimoto.html', professor=professor)
+        return render_template('Hack-u_yanagihara.html', professor=professor)
     elif professor_id==8:
-        return render_template('welcome.html', message='教授が見つかりません')
+        return render_template('Hack-u_kitanaka.html', professor=professor)
     elif professor_id==9:
-        return render_template('Professor Profile Kakimoto.html', professor=professor)
+        return render_template('Hack-u_yamaya.html', professor=professor)
     elif professor_id==10:
-        return render_template('Professor Profile Kakimoto.html', message='教授が見つかりません')
+        return render_template('Hack-u_usami.html',  professor=professor)
     elif professor_id==11:
-        return render_template('Professor Profile Kakimoto.html', professor=professor)
+        return render_template('Hack-u_nakanishi.html', professor=professor)
     else:
-        return render_template('welcome.html', message='教授が見つかりません')
-
+        return render_template('Hack-u_matsubara.html', professor=professor)
 @app.route('/comment_contents/<int:professor_id>',methods=['GET','POST'])
 def comment_contents(professor_id):
     professor=get_professor_by_id(professor_id)
@@ -282,28 +279,28 @@ def comment_contents(professor_id):
             for review_data in reviews_data:
                 reviews.append({'user_id': review_data[1], 'professor_number': review_data[2], 'comment': review_data[3]})
     if professor_id==1:
-        return render_template('Professor Profile Kakimoto.html', professor=professor)
+        return render_template('Hack-u_aoki.html', professor=professor,reviews=reviews)
     elif professor_id==2:
-        return render_template('welcome.html', message='教授が見つかりません')
+        return render_template('Hack-u_suzuki.html', professor=professor,reviews=reviews)
     elif professor_id==3:
-        return render_template('Professor Profile Kakimoto.html', professor=professor)
+        return render_template('Hack-u_takeda.html', professor=professor,reviews=reviews)
     elif professor_id==4:
-        return render_template('welcome.html', message='教授が見つかりません')
+        return render_template('Hack-u_sukigara.html', professor=professor,reviews=reviews)
     elif professor_id==5:
-        return render_template('Professor Profile Kakimoto.html', professor=professor)
+        return render_template('Hack-u_miyaki.html', professor=professor,reviews=reviews)
     elif professor_id==6:
-        return render_template('welcome.html', message='教授が見つかりません')
+        return render_template('Hack-u_aobayashi.html', professor=professor,reviews=reviews)
     elif professor_id==7:
-        return render_template('Professor Profile Kakimoto.html', professor=professor)
+        return render_template('Hack-u_yanagihara.html', professor=professor,reviews=reviews)
     elif professor_id==8:
-        return render_template('welcome.html', message='教授が見つかりません')
+        return render_template('Hack-u_kitanaka.html', professor=professor,reviews=reviews)
     elif professor_id==9:
-        return render_template('Professor Profile Kakimoto.html', professor=professor)
+        return render_template('Hack-u_yamaya.html', professor=professor,reviews=reviews)
     elif professor_id==10:
-        return render_template('Professor Profile Kakimoto.html', professor=professor,reviews=reviews)
+        return render_template('Hack-u_usami.html', professor=professor,reviews=reviews)
     elif professor_id==11:
-        return render_template('Professor Profile Kakimoto.html', professor=professor)
+        return render_template('Hack-u_nakanishi.html', professor=professor,reviews=reviews)
     else:
-        return render_template('welcome.html', message='教授が見つかりません')
+        return render_template('Hack-u_matsubara.html', professor=professor,reviews=reviews)
 if __name__=="__main__":
     app.run(debug=True)

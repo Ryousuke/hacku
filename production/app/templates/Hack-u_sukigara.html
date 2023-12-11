@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>鋤柄美紀</title>
+    <meta name="description" content="鋤柄美紀先生について" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a class="header-logo" href="index.html">
+          <img src="images/common/logo.png" alt="ロゴ" />
+        </a>
+      </div>
+    </header>
+    <main class="main"></main>
+    <body>
+      <h1>鋤柄美紀</h1>
+      <p><strong>出身地：</strong>広島県廿日市市</p>
+      <p><strong>趣味：</strong>野球観戦、コーヒー作り</p>
+      <p><strong>キャンパス：</strong>ナゴヤドーム前</p>
+      <p><strong>学部：</strong>都市情報</p>
+      <p><strong>専門分野：</strong>応用数学</p>
+      <p><strong>野球チーム：</strong>広島東洋カープ⚾</p>
+      <p><strong>好きな動物：</strong>猫</p>
+      <p><strong>好きな音楽：</strong>Mr.Children</p>
+
+      <h2>コメント欄</h2>
+      <form
+        method="POST"
+        action="{{url_for('comment_contents',professor_id=professor.professor_id)}}"
+      >
+        <label for="user_id">学籍番号</label>
+        <input type="text" id="user_id" name="user_id" required /><br />
+
+        <label for="professor_number">教授ID(10と入力してください)</label>
+        <input
+          type="text"
+          id="professor_number"
+          name="professor_number"
+          required
+        /><br />
+
+        <label for="comment">コメント:</label>
+        <textarea
+          id="comment"
+          name="comment"
+          rows="5"
+          cols="50"
+          required
+        ></textarea
+        ><br />
+
+        <button type="submit">投稿する</button>
+      </form>
+      <h3>過去のコメント</h3>
+      <ul>
+        {% for review in reviews %}
+        <li>{{review.user_id}}:{{review.comment}}</li>
+        {% endfor%}
+      </ul>
+    </body>
+    <footer class="footer"></footer>
+  </body>
+</html>

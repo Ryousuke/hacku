@@ -79,6 +79,25 @@
         <p><strong>野球チーム：</strong>なし</p>
         <p><strong>好きな動物：</strong>鹿</p>
         <p><strong>好きな音楽：</strong>J-POP（三浦大知）</p>
+
+        <label for="comment">コメント:</label>
+        <textarea
+          id="comment"
+          name="comment"
+          rows="5"
+          cols="50"
+          required
+        ></textarea
+        ><br />
+
+        <button type="submit">投稿する</button>
+      </form>
+      <h3>過去のコメント</h3>
+      <ul>
+        {% for review in reviews %}
+        <li>{{review.user_id}}:{{review.comment}}</li>
+        {% endfor%}
+      </ul>
     </div>
 
     <footer></footer>

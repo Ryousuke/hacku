@@ -2,36 +2,33 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <title>山谷達先生について</title>
-    <meta name="description" content="先生の情報" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>武田勝治教授の紹介</title>
     <style>
       body {
         font-family: "Arial", sans-serif;
         background-color: #f4f4f4;
         margin: 0;
         padding: 20px;
+        transition: background-color 0.5s ease;
       }
 
-      .header {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
+      body:hover {
+        background-color: #e0e0e0;
       }
 
-      .header-logo img {
-        max-width: 100px;
-        height: auto;
-      }
-
-      .main {
-        max-width: 600px;
-        margin: 20px auto;
+      .profile {
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
+        margin: 20px auto;
+        max-width: 600px;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .profile:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
       }
 
       h1 {
@@ -39,50 +36,39 @@
         text-align: center;
       }
 
-      h2 {
+      h2,
+      h3 {
         color: #555;
+        border-bottom: 2px solid #555;
+        padding-bottom: 5px;
       }
 
       p {
         color: #777;
         line-height: 1.5;
-        margin-bottom: 10px;
       }
 
       strong {
         color: #333;
       }
-
-      .footer {
-        margin-top: 20px;
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-      }
     </style>
   </head>
-
   <body>
-    <header class="header">
-      <div class="header-inner">
-        <a class="header-logo" href="index.html">
-          <img src="images/common/logo.png" alt="ロゴ" />
-        </a>
-      </div>
-    </header>
-    <main class="main">
-      <h1>山谷達</h1>
+    <div class="profile">
+      <h1>武田 勝治 (Takeda Katuji)</h1>
       <h2>基本情報</h2>
-      <p><strong>出身:</strong> 愛知県</p>
-      <p><strong>趣味:</strong> 数学と競馬</p>
-      <p><strong>キャンパス:</strong> ドーム前</p>
-      <p><strong>学部:</strong> 都市情報</p>
-      <p><strong>野球チーム:</strong> ドラゴンズ</p>
-      <p><strong>専門分野:</strong> 応用数学、数値計算</p>
-      <p><strong>動物:</strong> 犬 (ゴールデンレトリーバーを飼うか迷い中)</p>
-      <p><strong>音楽:</strong> ロック (King Gnu)<br />お気に入りの曲: 白日</p>
+      <p><strong>出身:</strong> 静岡県</p>
+      <p><strong>趣味:</strong> ベースと筋トレ</p>
 
+      <h2>学歴・所属</h2>
+      <p><strong>所属:</strong> 学部都市情報学部</p>
+      <p><strong>所属キャンパス:</strong> ナゴヤドーム前キャンパス</p>
+      <p><strong>専門の学問:</strong> 人文地理学</p>
+
+      <h2>好み</h2>
+      <p><strong>好きな球団:</strong> なし</p>
+      <p><strong>好きな動物:</strong> 猫</p>
+      <p><strong>好きな音楽:</strong> ロック（QUEEN）</p>
       <h2>コメント欄</h2>
       <form
         method="POST"
@@ -117,7 +103,6 @@
         <li>{{review.user_id}}:{{review.comment}}</li>
         {% endfor%}
       </ul>
-    </main>
-    <footer class="footer"></footer>
+    </div>
   </body>
 </html>

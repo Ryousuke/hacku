@@ -1,91 +1,126 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>柳原健先生について</title>
-    <meta name="description" content="先生の情報">
-    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="先生の情報" />
+    <meta name="viewport" content="width=device-width" />
     <style>
-        /* Add your styles here, if needed */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
+      /* Add your styles here, if needed */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
 
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
+      .header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
 
-        .header-logo img {
-            max-width: 100px;
-            height: auto;
-        }
+      .header-logo img {
+        max-width: 100px;
+        height: auto;
+      }
 
-        .main {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
+      .main {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
 
-        h1 {
-            color: #333;
-            text-align: center;
-        }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
 
-        h2 {
-            color: #555;
-        }
+      h2 {
+        color: #555;
+      }
 
-        p {
-            color: #777;
-            line-height: 1.5;
-            margin-bottom: 10px;
-        }
+      p {
+        color: #777;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
 
-        strong {
-            color: #333;
-        }
+      strong {
+        color: #333;
+      }
 
-        .footer {
-            margin-top: 20px;
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
+      .footer {
+        margin-top: 20px;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="header-inner">
-            <a class="header-logo" href="index.html">
-                <img src="images/common/logo.png" alt="ロゴ">
-            </a>
-        </div>
+      <div class="header-inner">
+        <a class="header-logo" href="index.html">
+          <img src="images/common/logo.png" alt="ロゴ" />
+        </a>
+      </div>
     </header>
     <main class="main">
-        <h1>柳原健</h1>
-        <h2>基本情報</h2>
-        <p><strong>出身:</strong> 三重県</p>
-        <p><strong>趣味:</strong> 電車と野球</p>
-        <p><strong>キャンパス:</strong> 天白</p>
-        <p><strong>学部:</strong> 情報工学部</p>
-        <p><strong>野球チーム:</strong> オリックス</p>
-        <p><strong>専門分野:</strong> バーチャルリアリティー</p>
-        <p><strong>動物:</strong> 猫(一匹飼ってます)</p>
-        <p><strong>音楽:</strong> Little Glee Monster<br>お気に入りの曲: 好きだ。</p>
+      <h1>柳原健</h1>
+      <h2>基本情報</h2>
+      <p><strong>出身:</strong> 三重県</p>
+      <p><strong>趣味:</strong> 電車と野球</p>
+      <p><strong>キャンパス:</strong> 天白</p>
+      <p><strong>学部:</strong> 情報工学部</p>
+      <p><strong>野球チーム:</strong> オリックス</p>
+      <p><strong>専門分野:</strong> バーチャルリアリティー</p>
+      <p><strong>動物:</strong> 猫(一匹飼ってます)</p>
+      <p>
+        <strong>音楽:</strong> Little Glee Monster<br />お気に入りの曲: 好きだ。
+      </p>
+
+      <h2>コメント欄</h2>
+      <form
+        method="POST"
+        action="{{url_for('comment_contents',professor_id=professor.professor_id)}}"
+      >
+        <label for="user_id">学籍番号</label>
+        <input type="text" id="user_id" name="user_id" required /><br />
+
+        <label for="professor_number">教授ID(10と入力してください)</label>
+        <input
+          type="text"
+          id="professor_number"
+          name="professor_number"
+          required
+        /><br />
+
+        <label for="comment">コメント:</label>
+        <textarea
+          id="comment"
+          name="comment"
+          rows="5"
+          cols="50"
+          required
+        ></textarea
+        ><br />
+
+        <button type="submit">投稿する</button>
+      </form>
+      <h3>過去のコメント</h3>
+      <ul>
+        {% for review in reviews %}
+        <li>{{review.user_id}}:{{review.comment}}</li>
+        {% endfor%}
+      </ul>
     </main>
     <footer class="footer"></footer>
-</body>
-
+  </body>
 </html>

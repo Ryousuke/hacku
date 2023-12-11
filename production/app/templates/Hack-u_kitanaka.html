@@ -86,6 +86,24 @@
         <p><strong>専門分野:</strong> ロボットの知能化</p>
         <p><strong>動物:</strong> 犬 (コーギーが好きです)</p>
         <p><strong>音楽:</strong> J-POP (ゆず)<br>お気に入りの曲: 栄光の架け橋</p>
+        <label for="comment">コメント:</label>
+        <textarea
+          id="comment"
+          name="comment"
+          rows="5"
+          cols="50"
+          required
+        ></textarea
+        ><br />
+
+        <button type="submit">投稿する</button>
+      </form>
+      <h3>過去のコメント</h3>
+      <ul>
+        {% for review in reviews %}
+        <li>{{review.user_id}}:{{review.comment}}</li>
+        {% endfor%}
+      </ul>
     </div>
 
     <footer></footer>

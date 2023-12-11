@@ -4,148 +4,146 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>メインページ</title>
-   
 
-<!--#############################################-->
+    <!--#############################################-->
 
-<style>
-  body {
-    background-color: #f6f6f6;
-    margin: 0;
-    padding: 10px 10px;
-    font-family: 'Arial', sans-serif;
-  }
-
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 20px;
-    background-color: #fff;
-    max-width: 1080px
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .header a {
-    text-decoration: none;
-    color: #333;
-  }
-
-  .css-header-welcome1 {
-    margin: 10px;
-  }
-
-  .css-header-welcome2 {
-    font-size: 24px;
-    margin: 0;
-  }
-
-  .css-header-welcome3 {
-    display: flex;
-    align-items: center;
-  }
-
-  form {
-    display: flex;
-    align-items: center;
-  }
-
-  form label {
-    margin-right: 10px;
-  }
-
-  form input {
-    padding: 8px;
-    margin: 10px;
-  }
-
-  form button {
-    background-color: #547443;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  form button:hover {
-    background-color: #769e61;
-  }
-
-  .main {
-    margin: 20px;
-  }
-
-  .css-main-welcome1 {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .css-main-welcome1 a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    margin-right: 20px;
-  }
-
-  .footer {
-    height: 100px; /* Adjust the height as needed */
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding-top: 40px;
-  }
-
-  .members {
-        background: #f8f8f8;
-        padding-top: 45px;
-        padding-bottom: 55px;
+    <style>
+      body {
+        background-color: #f6f6f6;
+        margin: 0;
+        padding: 10px 10px;
+        font-family: 'Arial', sans-serif;
       }
-      .members h2 {
-        font-size: 22px;
-        font-weight: bold;
-        text-align: center;
-      }
-      .members h2::after {
-        content: ‘’;
-        display: block;
-        width: 36px;
-        height: 3px;
-        background-color: #000000;
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .member-list {
+
+      .header {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+        background-color: #fff;
+        max-width: 1080px
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      .css-header-welcome1 {
+        margin: 10px;
+      }
+
+      .css-header-welcome2 {
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .css-header-welcome3 {
+        display: flex;
+        align-items: center;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+      }
+
+      form label {
+        margin-right: 10px;
+      }
+
+      form input {
+        padding: 8px;
+        margin: 10px;
+      }
+
+      form button {
+        background-color: #547443;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      form button:hover {
+        background-color: #769e61;
+      }
+
+      .main {
+        margin: 20px;
+      }
+
+      .css-main-welcome1 {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .css-main-welcome1 a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        margin-right: 20px;
+      }
+
+      .footer {
+        height: 100px; /* Adjust the height as needed */
+        background-color: #333;
+        color: white;
+        text-align: center;
         padding-top: 40px;
-        padding-bottom: 10px;
-        padding-left: 60px;
-        padding-right: 60px;
-        overflow: scroll;
       }
-      .member-list li {
-        flex-shrink: 0;
-        width: 260px;
-        margin-left: 75px;
-      }
-      .member-list li:first-child {
-        margin-left: 0;
-      }
-      @media (max-width: 800px) {
-        .member-list {
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-        .member-list li {
-          width: 220px;
-          margin-left: 30px;
-        }
-      }
-</style>
 
-<!--#############################################-->
+      .members {
+            background: #f8f8f8;
+            padding-top: 45px;
+            padding-bottom: 55px;
+          }
+          .members h2 {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+          }
+          .members h2::after {
+            content: ‘’;
+            display: block;
+            width: 36px;
+            height: 3px;
+            background-color: #000000;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .member-list {
+            display: flex;
+            padding-top: 40px;
+            padding-bottom: 10px;
+            padding-left: 60px;
+            padding-right: 60px;
+            overflow: scroll;
+          }
+          .member-list li {
+            flex-shrink: 0;
+            width: 260px;
+            margin-left: 75px;
+          }
+          .member-list li:first-child {
+            margin-left: 0;
+          }
+          @media (max-width: 800px) {
+            .member-list {
+              padding-left: 20px;
+              padding-right: 20px;
+            }
+            .member-list li {
+              width: 220px;
+              margin-left: 30px;
+            }
+          }
+    </style>
 
+    <!--#############################################-->
   </head>
   <body>
     <header class="header">
@@ -225,10 +223,10 @@
             </dl>
           </li>
           <li>
-            <img src="images\members\member_A.png" alt="田中敏夫" />
+            <img src="images\members\member_A.png" alt="山谷達" />
             <dl>
               <dt>
-                <a class="css-main-welcome12" href="/member9">田中敏夫</a>
+                <a class="css-main-welcome12" href="/member9">山谷達</a>
               </dt>
             </dl>
           </li>
