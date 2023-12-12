@@ -1,77 +1,126 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>林果歩教授の紹介</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
 
-        .profile {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
-        }
+      .profile {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 600px;
+      }
 
-        h1 {
-            color: #333;
-            text-align: center;
-        }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
 
-        h2, h3 {
-            color: #555;
-            border-bottom: 2px solid #555;
-            padding-bottom: 5px;
-        }
+      h2,
+      h3 {
+        color: #555;
+        border-bottom: 2px solid #555;
+        padding-bottom: 5px;
+      }
 
-        p {
-            color: #777;
-            line-height: 1.5;
-        }
+      p {
+        color: #777;
+        line-height: 1.5;
+      }
 
-        strong {
-            color: #333;
-        }
+      strong {
+        color: #333;
+      }
 
-        /* Add some styling to make the page more visually appealing */
-        body {
-            transition: background-color 0.5s ease;
-        }
+      /* Add some styling to make the page more visually appealing */
+      body {
+        transition: background-color 0.5s ease;
+      }
 
-        body:hover {
-            background-color: #e0e0e0;
-        }
+      body:hover {
+        background-color: #e0e0e0;
+      }
 
-        .profile:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        }
+      .profile:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="profile">
-        <h1>林　果歩 (Hayashi Kaho)</h1>
-        <h2>基本情報</h2>
-        <p><strong>出身:</strong> 神奈川県</p>
-        <p><strong>趣味:</strong> 料理とサッカー</p>
+      <h1>林　果歩 (Hayashi Kaho)</h1>
+      <h2>基本情報</h2>
+      <p><strong>出身:</strong> 神奈川県</p>
+      <p><strong>趣味:</strong> 料理とサッカー</p>
 
-        <h2>学歴・所属</h2>
-        <p><strong>所属:</strong> 都市情報学部</p>
-        <p><strong>所属キャンパス:</strong> ナゴヤドーム前キャンパス</p>
-        <p><strong>専門の学問:</strong> 公共政策学</p>
+      <h2>学歴・所属</h2>
+      <p><strong>所属:</strong> 都市情報学部</p>
+      <p><strong>所属キャンパス:</strong> ナゴヤドーム前キャンパス</p>
+      <p><strong>専門の学問:</strong> 公共政策学</p>
 
-        <h2>好み</h2>
-        <p><strong>好きな球団:</strong> なし</p>
-        <p><strong>好きな動物:</strong> 犬</p>
-        <p><strong>好きな音楽:</strong> あいみょん</p>
+      <h2>好み</h2>
+      <p><strong>好きな球団:</strong> なし</p>
+      <p><strong>好きな動物:</strong> 犬</p>
+      <p><strong>好きな音楽:</strong> あいみょん</p>
+
+      <h2>連絡先等</h2>
+      <dl>
+        <dt>電話番号</dt>
+        <dd>0120-123-456</dd>
+        <dt>メールアドレス</dt>
+        <dd>hoge@hogehoge.com</dd>
+        <dt>応答可能時間</dt>
+        <dd></dd>
+      </dl>
+
+      <!--応答可能時間のテーブル-->
+      <table>
+        <tbody>
+          <tr style="background-color: #3a4652; color: #f8f8f8">
+            <td style="background-color: #d84473">日</td>
+            <td>月</td>
+            <td>火</td>
+            <td>水</td>
+            <td>木</td>
+            <td>金</td>
+            <td style="background-color: #4490d8">土</td>
+          </tr>
+          <tr style="color: #5f6368">
+            <td>✕</td>
+            <td>12:00-13:00</td>
+            <td>16:00-19:00</td>
+            <td>✕</td>
+            <td>✕</td>
+            <td>✕</td>
+            <td>10:00-12:00</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>コメント欄</h2>
+      <form
+        method="POST"
+        action="{{url_for('comment_contents',professor_id=professor.professor_id)}}"
+      >
+        <label for="user_id">学籍番号</label>
+        <input type="text" id="user_id" name="user_id" required /><br />
+
+        <label for="professor_number">教授ID(10と入力してください)</label>
+        <input
+          type="text"
+          id="professor_number"
+          name="professor_number"
+          required
+        /><br />
 
         <label for="comment">コメント:</label>
         <textarea
@@ -92,6 +141,5 @@
         {% endfor%}
       </ul>
     </div>
-
-</body>
+  </body>
 </html>

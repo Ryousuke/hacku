@@ -77,6 +77,39 @@
       <p><strong>動物:</strong> 犬 (ゴールデンレトリーバーを飼うか迷い中)</p>
       <p><strong>音楽:</strong> ロック (King Gnu)<br />お気に入りの曲: 白日</p>
 
+      <h2>連絡先等</h2>
+      <dl>
+        <dt>電話番号</dt>
+        <dd>0120-123-456</dd>
+        <dt>メールアドレス</dt>
+        <dd>hoge@hogehoge.com</dd>
+        <dt>応答可能時間</dt>
+        <dd></dd>
+      </dl>
+
+      <!--応答可能時間のテーブル-->
+      <table>
+        <tbody>
+          <tr style="background-color: #3a4652; color: #f8f8f8">
+            <td style="background-color: #d84473">日</td>
+            <td>月</td>
+            <td>火</td>
+            <td>水</td>
+            <td>木</td>
+            <td>金</td>
+            <td style="background-color: #4490d8">土</td>
+          </tr>
+          <tr style="color: #5f6368">
+            <td>✕</td>
+            <td>12:00-13:00</td>
+            <td>16:00-19:00</td>
+            <td>✕</td>
+            <td>✕</td>
+            <td>✕</td>
+            <td>10:00-12:00</td>
+          </tr>
+        </tbody>
+      </table>
       <h2>コメント欄</h2>
       <form
         method="POST"
@@ -111,6 +144,7 @@
         <li>{{review.user_id}}:{{review.comment}}</li>
         {% endfor%}
       </ul>
+    </div>
     </main>
     <footer class="footer"></footer>
   </body>

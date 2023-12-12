@@ -72,40 +72,62 @@ def welcome():
 
 @app.route("/member1")
 def member1():
-    return render_template("Hack-u_ituki.html")
+    professor = get_professor_by_id(1)
+    return render_template("Hack-u_ituki.html",professor=professor)
 @app.route("/member2")
 def member2():
-    return render_template("Hack-u_hayashi.html")
+    professor = get_professor_by_id(2)
+    return render_template("Hack-u_hayashi.html",professor=professor)
+
 @app.route("/member3")
 def member3():
-    return render_template("Hack-u_itano.html")
+    professor = get_professor_by_id(3)
+    return render_template("Hack-u_itano.html",professor=professor)
+
 @app.route("/member4")
 def member4():
-    return render_template("Hack-u_washio.html")
+    professor = get_professor_by_id(4)
+    return render_template("Hack-u_washio.html",professor=professor)
+
 @app.route("/member5")
 def member5():
-    return render_template("Hack-u_katou.html")
+    professor = get_professor_by_id(5)
+    return render_template("Hack-u_katou.html",professor=professor)
+
 @app.route("/member6")
 def member6():
-    return render_template("Hack-u_oono.html")
+    professor = get_professor_by_id(6)
+    return render_template("Hack-u_oono.html",professor=professor)
+
 @app.route("/member7")
 def member7():
-    return render_template("Hack-u_saitou.html")
+    professor = get_professor_by_id(7)
+    return render_template("Hack-u_saitou.html",professor=professor)
+
 @app.route("/member8")
 def member8():
-    return render_template("Hack-u_urusibara.html")
+    professor = get_professor_by_id(8)
+    return render_template("Hack-u_urusibara.html",professor=professor)
+
 @app.route("/member9")
 def member9():
-    return render_template("Hack-u_aizawa.html")
+    professor = get_professor_by_id(9)
+    return render_template("Hack-u_aizawa.html",professor=professor)
+
 @app.route("/member10")
 def member10():
-    return render_template("Hack-u_taguti.html")
+    professor = get_professor_by_id(10)
+    return render_template("Hack-u_taguti.html",professor=professor)
+
 @app.route("/member11")
 def member11():
-    return render_template("Hack-u_sasaki.html")
+    professor = get_professor_by_id(11)
+    return render_template("Hack-u_sasaki.html",professor=professor)
+
 @app.route("/member12")
 def member12():
-    return render_template("Hack-u_endou.html")
+    professor = get_professor_by_id(12)
+    return render_template("Hack-u_endou.html",professor=professor)
 
 class userMatch:
     def __init__(self,db_name='user_db.db'):

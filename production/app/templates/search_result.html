@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>検索結果</title>
+  </head>
+  <body>
+    <header>
+      <div class="css-header-welcome1">
+        <h1 class="css-header-welcome2">
+          <a class aria-label="みんなちがってみんないい" href="/welcome"
+            >みんなちがってみんないい</a
+          >
+        </h1>
+      </div>
+    </header>
+    <main>
+      <h2>検索結果</h2>
+      <div id="search-results"></div>
+      {% if professors %}
+      <ul>
+        {% for professor in professors %}
+        <li>
+          <a
+            href="{{ url_for('professor_detail', professor_id=professor.professor_id) }}"
+          >
+            {{ professor.name }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>No matching professors found.</p>
+      {% endif %}
+    </main>
+  </body>
+</html>

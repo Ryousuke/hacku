@@ -1,86 +1,136 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>漆原透先生について</title>
-    <meta name="description" content="先生の情報">
-    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="先生の情報" />
+    <meta name="viewport" content="width=device-width" />
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px;
-            color: #343a40;
-            line-height: 1.6;
-        }
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 20px;
+        color: #343a40;
+        line-height: 1.6;
+      }
 
-        .header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
+      .header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
 
-        .header-logo img {
-            max-width: 100px;
-            height: auto;
-        }
+      .header-logo img {
+        max-width: 100px;
+        height: auto;
+      }
 
-        h1 {
-            color: #007bff;
-            text-align: center;
-            margin-top: 20px;
-        }
+      h1 {
+        color: #007bff;
+        text-align: center;
+        margin-top: 20px;
+      }
 
-        h2 {
-            color: #555;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 5px;
-        }
+      h2 {
+        color: #555;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 5px;
+      }
 
-        p {
-            color: #777;
-            margin-bottom: 10px;
-        }
+      p {
+        color: #777;
+        margin-bottom: 10px;
+      }
 
-        strong {
-            color: #007bff;
-        }
+      strong {
+        color: #007bff;
+      }
 
-        footer {
-            margin-top: 20px;
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
+      footer {
+        margin-top: 20px;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
 
-        .main {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
+      .main {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
     </style>
-</head>
-<body>
-    <header class="header">
-    </header>
+  </head>
+  <body>
+    <header class="header"></header>
 
     <div class="main">
-        <h1>漆原透</h1>
-        <h2>基本情報</h2>
-        <p><strong>出身:</strong> 愛知県</p>
-        <p><strong>趣味:</strong> サッカーと野球</p>
-        <p><strong>キャンパス:</strong> 天白</p>
-        <p><strong>学部:</strong> 理工(機械)</p>
-        <p><strong>野球チーム:</strong> なし</p>
-        <p><strong>専門分野:</strong> ロボットの知能化</p>
-        <p><strong>動物:</strong> 犬 (コーギーが好きです)</p>
-        <p><strong>音楽:</strong> J-POP (ゆず)<br>お気に入りの曲: 栄光の架け橋</p>
+      <h1>漆原透</h1>
+      <h2>基本情報</h2>
+      <p><strong>出身:</strong> 愛知県</p>
+      <p><strong>趣味:</strong> サッカーと野球</p>
+      <p><strong>キャンパス:</strong> 天白</p>
+      <p><strong>学部:</strong> 理工(機械)</p>
+      <p><strong>野球チーム:</strong> なし</p>
+      <p><strong>専門分野:</strong> ロボットの知能化</p>
+      <p><strong>動物:</strong> 犬 (コーギーが好きです)</p>
+      <p>
+        <strong>音楽:</strong> J-POP (ゆず)<br />お気に入りの曲: 栄光の架け橋
+      </p>
+      <h2>連絡先等</h2>
+      <dl>
+        <dt>電話番号</dt>
+        <dd>0120-123-456</dd>
+        <dt>メールアドレス</dt>
+        <dd>hoge@hogehoge.com</dd>
+        <dt>応答可能時間</dt>
+        <dd></dd>
+      </dl>
+
+      <!--応答可能時間のテーブル-->
+      <table>
+        <tbody>
+          <tr style="background-color: #3a4652; color: #f8f8f8">
+            <td style="background-color: #d84473">日</td>
+            <td>月</td>
+            <td>火</td>
+            <td>水</td>
+            <td>木</td>
+            <td>金</td>
+            <td style="background-color: #4490d8">土</td>
+          </tr>
+          <tr style="color: #5f6368">
+            <td>✕</td>
+            <td>12:00-13:00</td>
+            <td>16:00-19:00</td>
+            <td>✕</td>
+            <td>✕</td>
+            <td>✕</td>
+            <td>10:00-12:00</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>コメント欄</h2>
+      <form
+        method="POST"
+        action="{{url_for('comment_contents',professor_id=professor.professor_id)}}"
+      >
+        <label for="user_id">学籍番号</label>
+        <input type="text" id="user_id" name="user_id" required /><br />
+
+        <label for="professor_number">教授ID(10と入力してください)</label>
+        <input
+          type="text"
+          id="professor_number"
+          name="professor_number"
+          required
+        /><br />
+
         <label for="comment">コメント:</label>
         <textarea
           id="comment"
@@ -102,5 +152,5 @@
     </div>
 
     <footer></footer>
-</body>
+  </body>
 </html>

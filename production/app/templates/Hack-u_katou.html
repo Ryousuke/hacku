@@ -1,78 +1,127 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>加藤夏美</title>
-    <meta name="description" content="先生について">
-    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="先生について" />
+    <meta name="viewport" content="width=device-width" />
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px;
-            color: #343a40;
-            line-height: 1.6;
-        }
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 20px;
+        color: #343a40;
+        line-height: 1.6;
+      }
 
-        .header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
+      .header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
 
-        .header-logo img {
-            max-width: 100px;
-            height: auto;
-        }
+      .header-logo img {
+        max-width: 100px;
+        height: auto;
+      }
 
-        h1 {
-            color: #007bff;
-            text-align: center;
-            margin-top: 20px;
-        }
+      h1 {
+        color: #007bff;
+        text-align: center;
+        margin-top: 20px;
+      }
 
-        p {
-            color: #555;
-            margin-bottom: 10px;
-        }
+      p {
+        color: #555;
+        margin-bottom: 10px;
+      }
 
-        strong {
-            color: #007bff;
-        }
+      strong {
+        color: #007bff;
+      }
 
-        footer {
-            margin-top: 20px;
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
+      footer {
+        margin-top: 20px;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
 
-        .main {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
+      .main {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
     </style>
-</head>
-<body>
-    <header class="header">   </header>
+  </head>
+  <body>
+    <header class="header"></header>
 
     <div class="main">
-        <h1>加藤夏美</h1>
-        <p><strong>出身地：</strong>静岡県</p>
-        <p><strong>趣味：</strong>株、料理</p>
-        <p><strong>キャンパス：</strong>ナゴヤドーム前</p>
-        <p><strong>学部：</strong>都市情報</p>
-        <p><strong>専門分野：</strong>経済</p>
-        <p><strong>野球チーム：</strong>なし</p>
-        <p><strong>好きな動物：</strong>鹿</p>
-        <p><strong>好きな音楽：</strong>J-POP（三浦大知）</p>
+      <h1>加藤夏美</h1>
+      <p><strong>出身地：</strong>静岡県</p>
+      <p><strong>趣味：</strong>株、料理</p>
+      <p><strong>キャンパス：</strong>ナゴヤドーム前</p>
+      <p><strong>学部：</strong>都市情報</p>
+      <p><strong>専門分野：</strong>経済</p>
+      <p><strong>野球チーム：</strong>なし</p>
+      <p><strong>好きな動物：</strong>鹿</p>
+      <p><strong>好きな音楽：</strong>J-POP（三浦大知）</p>
+
+      <h2>連絡先等</h2>
+      <dl>
+        <dt>電話番号</dt>
+        <dd>0120-123-456</dd>
+        <dt>メールアドレス</dt>
+        <dd>hoge@hogehoge.com</dd>
+        <dt>応答可能時間</dt>
+        <dd></dd>
+      </dl>
+
+      <!--応答可能時間のテーブル-->
+      <table>
+        <tbody>
+          <tr style="background-color: #3a4652; color: #f8f8f8">
+            <td style="background-color: #d84473">日</td>
+            <td>月</td>
+            <td>火</td>
+            <td>水</td>
+            <td>木</td>
+            <td>金</td>
+            <td style="background-color: #4490d8">土</td>
+          </tr>
+          <tr style="color: #5f6368">
+            <td>✕</td>
+            <td>12:00-13:00</td>
+            <td>16:00-19:00</td>
+            <td>✕</td>
+            <td>✕</td>
+            <td>✕</td>
+            <td>10:00-12:00</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>コメント欄</h2>
+      <form
+        method="POST"
+        action="{{url_for('comment_contents',professor_id=professor.professor_id)}}"
+      >
+        <label for="user_id">学籍番号</label>
+        <input type="text" id="user_id" name="user_id" required /><br />
+
+        <label for="professor_number">教授ID(10と入力してください)</label>
+        <input
+          type="text"
+          id="professor_number"
+          name="professor_number"
+          required
+        /><br />
 
         <label for="comment">コメント:</label>
         <textarea
@@ -95,5 +144,5 @@
     </div>
 
     <footer></footer>
-</body>
+  </body>
 </html>
