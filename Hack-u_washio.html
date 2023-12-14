@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>鷲尾美紀</title>
+    <meta name="description" content="先生について" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+
+  <style>
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9; /* Brighter background color */
+        color: #333;
+        margin: 0;
+    }
+    
+    .main {
+      max-width: 900px; /* Increased max-width */
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px 50px;
+      padding-bottom: 40px;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1{
+      text-align: center;
+
+    }
+
+    dl{
+      line-height: 2em;
+    }
+
+    dt{
+      font-weight: bold;
+      color: #333;
+      padding: 0px 30px
+      line-height: 28px;
+      display: inline-block;
+      width: 9em;
+      float: left;
+    }
+
+    table , td, th {
+      border: 1px solid #bbbbbb;
+      border-collapse: collapse;
+    }
+    td, th {
+        text-align: center;
+        width: 100px;
+        height: 35px;
+    }
+    th {
+        background: #f0e6cc;
+    }
+    .even {
+        background: #fbf8f0;
+    }
+    .odd {
+        background: #fefcf9;
+    }
+
+    .comments{
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+    }
+
+    label {
+    display: block;
+    margin-top: 15px; 
+    }
+
+    input, textarea {
+      padding: 8px; 
+      margin-top: 4px; 
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #547443;
+      border-radius: 4px;
+      color: #fff;
+      padding: 12px 18px;
+      border: none;
+
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #769e61;
+    }
+  </style>
+
+
+  <body>
+    <header class="header"></header>
+
+    <main class="main">
+    <body>
+      <h1>鷲尾美紀</h1>
+      <dl>
+        <dt>出身地</dt>
+        <dd>広島県廿日市市</dd>
+        <dt>趣味</dt>
+        <dd>野球観戦、コーヒー作り</dd>
+    </dl>
+    <dl>
+        <dt>学部</dt>
+        <dd>都市情報</dd>
+        <dt>キャンパス</dt>
+        <dd>ナゴヤドーム前</dd>
+        <dt>専門分野</dt>
+        <dd>応用数学</dd>
+    </dl>
+    <dl>
+        <dt>野球チーム</dt>
+        <dd>広島東洋カープ⚾</dd>
+        <dt>好きな動物</dt>
+        <dd>猫</dd>
+        <dt>好きな音楽</dt>
+        <dd>Mr.Children</dd>
+    </dl>
+
+      <h2>連絡先等</h2>
+      <dl>
+        <dt>電話番号</dt>
+        <dd>0120-123-456</dd>
+        <dt>メールアドレス</dt>
+        <dd>hoge@hogehoge.com</dd>
+        <dt>応答可能時間</dt>
+        <dd></dd>
+      </dl>
+
+      <!--応答可能時間のテーブル-->
+      <table>
+        <tbody>
+          <tr style="background-color: #3a4652; color: #f8f8f8">
+            <td style="background-color: #d84473">日</td>
+            <td>月</td>
+            <td>火</td>
+            <td>水</td>
+            <td>木</td>
+            <td>金</td>
+            <td style="background-color: #4490d8">土</td>
+          </tr>
+          <tr style="color: #5f6368">
+            <td>✕</td>
+            <td>12:00-13:00</td>
+            <td>16:00-19:00</td>
+            <td>✕</td>
+            <td>✕</td>
+            <td>✕</td>
+            <td>10:00-12:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <div class="comments">
+      <h2>コメント欄</h2>
+      <form
+        method="POST"
+        action="{{url_for('comment_contents',professor_id=professor.professor_id)}}"
+      >
+        <label for="user_id">学籍番号</label>
+        <input type="text" id="user_id" name="user_id" required /><br />
+
+        <label for="professor_number">教授ID(10と入力してください)</label>
+        <input
+          type="text"
+          id="professor_number"
+          name="professor_number"
+          required
+        /><br />
+
+        <label for="comment">コメント:</label>
+        <textarea
+          id="comment"
+          name="comment"
+          rows="5"
+          cols="50"
+          required
+        ></textarea
+        ><br />
+
+        <button type="submit">投稿する</button>
+      </form>
+      <h3>過去のコメント</h3>
+      <ul>
+        {% for review in reviews %}
+        <li>{{review.user_id}}:{{review.comment}}</li>
+        {% endfor%}
+      </ul>
+    </div>
+    </body>
+    <footer class="footer"></footer>
+  </body>
+</html>
