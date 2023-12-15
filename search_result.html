@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>検索結果</title>
+  </head>
+
+  <style>
+  /*　################## ここからヘッダー ##################　*/
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 20px;
+    background-color: #fff;
+    max-width: 1080px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .header a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  .css-header-welcome1 {
+    margin: 10px;
+  }
+
+  .css-header-welcome2 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .css-header-welcome3 {
+    display: flex;
+    align-items: center;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+  }
+
+  form label {
+    margin-right: 10px;
+  }
+
+  form input {
+    padding: 8px;
+    margin: 10px;
+  }
+
+  form button {
+    background-color: #547443;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  form button:hover {
+    background-color: #769e61;
+  }
+  /*　################## ここまでヘッダー ##################　*/
+
+
+/*　################## ここからフッター ##################　*/
+.footer {
+  display: flex;
+  height: 100px; /* Adjust the height as needed */
+  justify-content: space-around;
+  background-color: #334329;
+  color: #f8f8f8;
+  padding: 10px;
+}
+
+.footer a {
+  color: #f8f8f8;
+  font-size: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.footer p {
+  color: #f8f8f8;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 20px;
+}
+/*　################## ここまでフッター ##################　*/
+</style>
+
+
+  <body>
+    <!--　################## ここからヘッダー ##################　-->
+    <header class="header">
+      <div class="css-header-welcome1">
+        <h1 class="css-header-welcome2">
+          <a class aria-label="みんなちがってみんないい" href="/welcome"
+            >みんなちがってみんないい</a
+          >
+        </h1>
+      </div>
+      <div class="css-header-welcome3">
+        <form action="{{url_for('search')}}" method="POST">
+          <label for="keyword">キーワード検索してください:</label>
+          <input type="text" id="keyword" name="keyword" required />
+          <button type="submit">検索</button>
+        </form>
+      </div>
+    </header>
+    <!--　################## ここまでヘッダー ##################　-->
+    <main>
+      <h2>検索結果</h2>
+      <div id="search-results"></div>
+      {% if professors %}
+      <ul>
+        {% for professor in professors %}
+        <li>
+          <a
+            href="{{ url_for('professor_detail', professor_id=professor.professor_id) }}"
+          >
+            {{ professor.name }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>No matching professors found.</p>
+      {% endif %}
+    </main>
+        <!--　################## ここからフッター ##################　-->
+        <footer class="footer">
+          <a class aria-label="みんなちがってみんないい" href="/welcome"
+          >MatchA Pro</a>
+            <p> Hack U 名城大学 2023<br />
+                【制作・著作】　HackID.10　みんなちがってみんないい</p>
+          </footer>
+        <!--　################## ここまでフッター ##################　-->
+  </body>
+</html>

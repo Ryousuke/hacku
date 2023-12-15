@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>相性診断結果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="相性診断結果" />
+  </head>
+
+  <style>
+    body,
+    h1,
+    p,
+    a {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+      /*　################## ここからヘッダー ##################　*/
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0px 20px;
+        background-color: #fff;
+        max-width: 1080px
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      .css-header-welcome1 {
+        margin: 10px;
+      }
+
+      .css-header-welcome2 {
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .css-header-welcome3 {
+        display: flex;
+        align-items: center;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+      }
+
+      form label {
+        margin-right: 10px;
+      }
+
+      form input {
+        padding: 8px;
+        margin: 10px;
+      }
+
+      form button {
+        background-color: #547443;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      form button:hover {
+        background-color: #769e61;
+      }
+      /*　################## ここまでヘッダー ##################　*/
+
+
+    #result-container {
+      text-align: center;
+      max-width: 900px;
+      margin: 50px;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 100px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .result-css1 {
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    .result-css2 {
+      font-size: 20px;
+      color: #0077cc;
+    }
+
+    p{
+      margin-top: 30px;
+    }
+
+
+    main a {
+      font-size: 30px;
+      display: inline-block;
+      line-height: 5em;
+      margin-top: 50px;
+      padding: 10px 40px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #769e61;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #769e61;
+    }
+
+
+
+
+    .lds-roller {
+  position: fixed; /* Fixed position to keep it in the center */
+  top: 50%;
+  left: 47.5%;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff118c;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2); /* ぼかし用のオーバーレイの背景色と透明度 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1; /* 初期状態は非表示 */
+      transition: opacity 0.5s ease-out;
+      backdrop-filter: blur(60px); /* ぼかしの度合い */
+    }
+
+    .content {
+      color: white;
+      position: fixed;
+      text-align: center;
+      top: 30%;
+      left: 47%;
+    }
+
+
+    .hide {
+      opacity: 0;
+      transition: opacity 300ms ease-out;
+      pointer-events: none;
+    }
+
+      /*　################## ここからフッター ##################　*/
+      .footer {
+        display: flex;
+        height: 100px; /* Adjust the height as needed */
+        justify-content: space-around;
+        background-color: #334329;
+        color: #f8f8f8;
+        padding: 10px;
+      }
+
+      .footer a {
+        color: #f8f8f8;
+        font-size: 30px;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 20px;
+        text-decoration: none;
+      }
+
+      .footer p {
+        color: #f8f8f8;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 20px;
+      }
+      /*　################## ここまでフッター ##################　*/
+
+  </style>
+
+  <body>
+    <!--　################## ここからヘッダー ##################　-->
+    <header class="header">
+      <div class="css-header-welcome1">
+        <h1 class="css-header-welcome2">
+          <a class aria-label="みんなちがってみんないい" href="/welcome"
+            >みんなちがってみんないい</a
+          >
+        </h1>
+      </div>
+      <div class="css-header-welcome3">
+        <form action="{{url_for('search')}}" method="POST">
+          <label for="keyword">キーワード検索してください:</label>
+          <input type="text" id="keyword" name="keyword" required />
+          <button type="submit">検索</button>
+        </form>
+      </div>
+    </header>
+    <!--　################## ここまでヘッダー ##################　-->
+    <main>
+    <h1>相性診断結果</h1>
+
+    <div id="result-container" class="result-css1">
+      <p class="result-css2">
+        最も相性が高いのは{{data.professor_name}}先生で{{data.compatibility_score}}%だったよ!!
+      </p>
+      <p>
+        クリックして<br />
+        |<br />
+        v
+      </p>
+      <a
+        href="{{ url_for('professor_detail', professor_id=data.professor_id) }}"
+      >
+        {{ data.professor_name }}
+      </a>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <div class="content">
+        <h1>診断中...</h1>
+    </div>
+    
+    <script>
+      // JavaScriptを使用して2秒後にオーバーレイを表示
+      document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+          document.getElementById('overlay').classList.add('hide');
+        }, 1500);
+      });
+    </script>
+    
+    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+          document.querySelector('.lds-roller').classList.add('hide');
+        }, 1500);
+      });
+    </script>
+    </main>
+
+    <!--　################## ここからフッター ##################　-->
+    <footer class="footer">
+      <a class aria-label="みんなちがってみんないい" href="/welcome"
+      >MatchA Pro</a>
+        <p> Hack U 名城大学 2023<br />
+            【制作・著作】　HackID.10　みんなちがってみんないい</p>
+      </footer>
+    <!--　################## ここまでフッター ##################　-->
+
+
+  </body>
+</html>
