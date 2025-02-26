@@ -1,3 +1,26 @@
+作品に関する詳細<br>
+製作期間:2023年11月~12月(2か月)<br>
+作業範囲:コーティング/実装<br>
+使用ツール:Python(Flask)/HTML/CSS<br>
+<br>
+*今回、使用した全ての教授は生成AIが架空に作り上げた教授の写真を使用しているため、実際には存在しない<br>
+*この作品はFlask関係上、github上でwebサイトを開くことは現在できない<br>
+<br>
+作品の概要<br>
+相性診断を通じて教授と生徒をつなぐマッチングウェブサイト<br>
+  &emsp;サイト構成<br>
+    &emsp;&emsp;ログインページ<br>
+    &emsp;&emsp;トップページ<br>
+    &emsp;&emsp;各教授の紹介ページ<br>
+      &emsp;&emsp;&emsp;基本情報<br>
+      &emsp;&emsp;&emsp;所属<br>
+      &emsp;&emsp;&emsp;好み<br>
+      &emsp;&emsp;&emsp;予約フォーム<br>
+      &emsp;&emsp;&emsp;コメント欄<br>
+    &emsp;&emsp;相性診断フォーム<br>
+*サイトの内容を把握してもらうため、画像をcontentフォルダーに挿入している<br>
+
+
 それぞれのファイル説明<br>
 <br>
 app.py　→ Flask動作に関するコード<br>
